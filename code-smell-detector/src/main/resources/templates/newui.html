@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My UI Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.wallpapersden.com/image/download/nebula_am5sZ2qUmZqaraWkpJRobWllrWdma2U.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color:#33FF99;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            height: 100px;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            height: 100%;
+        }
+        .logo {
+            height: 100%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .logo img {
+            height: 100%;
+            width: auto;
+            justify-content: center;
+        }
+        main {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            margin-top: 20px;
+        }
+        .container {
+            position: relative;
+        }
+
+        .top-div {
+            background-color: lightblue;
+            height: 100px;
+            width: 100%;
+        }
+
+        .bottom-div {
+            background-color: lightgreen;
+            height: 100px;
+            width: 100%;
+            position: absolute;
+            top: 120px; /* Adjust this value to create space between the divs */
+        }
+
+        .input-box,
+        .output-box {
+            box-sizing: border-box;
+            height : 100%;
+            width : 45%;
+            padding: 10px 20px;
+            margin: 10px;
+            background-color:#00CCCC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transition effect */
+        }
+        .refactor-box {
+            background-color:#00CCCC;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;s
+        }
+        .input-box:hover,
+        .refactor-box:hover,
+        .output-box:hover {
+            background-color: #ddd; /* Change background color on hover */
+        }
+        .input-box button,
+        .output-box button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Transition effect */
+        }
+        .input-box button:hover,
+        .output-box button:hover {
+            background-color: #555; /* Change button background color on hover */
+        }
+        .text-box {
+            font-size: 20px;
+        }
+		font-color:black;
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <img src="http://refactoring.com/refactoring-logo.png" alt="Logo">
+        </div>
+        <button onclick="redirectToLink()">My Professor</button>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="input-box">
+            <h2>Input</h2>
+            <form method="post" enctype="multipart/form-data" action="/upload">
+                <input type="file" name="file">
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+        <div class="output-box">
+            <h2>Indicators</h2>
+            <div class="text-box" th:if="${isLongMethod}" th:text="${isLongMethod}" style="color: red"></div>
+            <div class="text-box" th:if="${isLongVariable}" th:text="${isLongVariable}" style="color: red"></div>
+            <div class="text-box" th:if="${isDuplicateCode}" th:text="${isDuplicateCode}" style="color: red"></div>
+            <div class="text-box" th:if="${message}" th:text="${message}" style="color: green"></div>
+            <div class="text-box" th:if="${errorMessage}" th:text="${errorMessage}" style="color: red"></div>
+            <div class="text-box" th:if="${defaultMessage}" th:text="${defaultMessage}" style="color: green"></div>
+        </div>
+        <div class="refactor-box">
+            <button th:if="${isRefactoredCode}" id="refactorButton" onclick="showDiv()" >Refactor</button>
+            <a id="hiddenDiv2" style="display: none" th:if="${isRefactoredCode}" th:href="${isRefactoredCode}" download="file.java">Download File</a>
+            <div id="hiddenDiv" style="display: none;">
+                <h2>Refactored code</h2>
+                <pre class="text-box" th:if="${isRefactoredCode}" th:text="${isRefactoredCode}" style="color: red"></pre>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+<script>
+        function showDiv() {
+            var div = document.getElementById("hiddenDiv");
+            var div2 = document.getElementById("hiddenDiv2");
+            div.style.display = (div.style.display === "none") ? "block" : "none";
+            div2.style.display = (div2.style.display === "none") ? "block" : "none";
+        }
+        function redirectToLink() {
+            window.location.href = 'https://www.linkedin.com/in/xin-zhao-82a369104/';
+        }
+    </script>
+</body>
+</html>
+

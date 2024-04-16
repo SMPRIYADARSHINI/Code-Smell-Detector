@@ -1,0 +1,4 @@
+com\priya\refactor\codesmelldetector\CodeSmellDetectorApplication.class
+com\priya\refactor\codesmelldetector\processor\DuplicateCodeDetector.class
+com\priya\refactor\codesmelldetector\processor\LongMethodDetector.class
+com\priya\refactor\codesmelldetector\processor\LongVariableListDetector.class

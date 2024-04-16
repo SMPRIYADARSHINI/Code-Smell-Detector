@@ -1,0 +1,5 @@
+D:\workspaces_java\code-smell-detector\src\main\java\com\priya\refactor\codesmelldetector\controller\CodeSmellDetectorController.java
+D:\workspaces_java\code-smell-detector\src\main\java\com\priya\refactor\codesmelldetector\processor\DuplicateCodeDetector.java
+D:\workspaces_java\code-smell-detector\src\main\java\com\priya\refactor\codesmelldetector\CodeSmellDetectorApplication.java
+D:\workspaces_java\code-smell-detector\src\main\java\com\priya\refactor\codesmelldetector\processor\LongMethodDetector.java
+D:\workspaces_java\code-smell-detector\src\main\java\com\priya\refactor\codesmelldetector\processor\LongVariableListDetector.java
